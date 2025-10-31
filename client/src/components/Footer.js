@@ -3,10 +3,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer style={{ backgroundColor: 'var(--color-secondary)', paddingTop: '20px', paddingBottom: '20px', marginTop: '40px' }}>
       <Container>
         <Row>
-          <Col className='text-center py-3'>
+          <Col className='text-center'>
             Copyright &copy; La Belleza de Crear
           </Col>
         </Row>

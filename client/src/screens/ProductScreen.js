@@ -21,34 +21,40 @@ const ProductScreen = () => {
     navigate('/cart');
   };
 
+  const cardStyle = {
+    borderRadius: '12px',
+    border: '1px solid var(--color-border)',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
+  };
+
   return (
     <>
-      <Link className='btn btn-light my-3' to='/store'>
-        Go Back
+      <Link className='btn btn-secondary my-3' to='/store'>
+        Volver a la Tienda
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={product.image} alt={product.name} fluid />
+          <Image src={product.image} alt={product.name} fluid style={{ borderRadius: '12px' }}/>
         </Col>
         <Col md={3}>
           <ListGroup variant='flush'>
-            <ListGroup.Item>
+            <ListGroup.Item style={{ backgroundColor: 'transparent' }}>
               <h3>{product.name}</h3>
             </ListGroup.Item>
-            <ListGroup.Item>
-              Description: {product.description}
+            <ListGroup.Item style={{ backgroundColor: 'transparent' }}>
+              Descripción: {product.description}
             </ListGroup.Item>
-            <ListGroup.Item>
-              Price: ${product.price}
+            <ListGroup.Item style={{ backgroundColor: 'transparent', fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-primary)' }}>
+              Precio: ${product.price}
             </ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
-          <Card>
+          <Card style={cardStyle}>
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <Row>
-                  <Col>Price:</Col>
+                  <Col>Precio:</Col>
                   <Col>
                     <strong>${product.price}</strong>
                   </Col>
@@ -56,9 +62,9 @@ const ProductScreen = () => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Status:</Col>
+                  <Col>Estado:</Col>
                   <Col>
-                    {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                    {product.countInStock > 0 ? 'Disponible' : 'Agotado'}
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -66,7 +72,7 @@ const ProductScreen = () => {
               {product.countInStock > 0 && (
                 <ListGroup.Item>
                   <Row>
-                    <Col>Qty</Col>
+                    <Col>Cantidad</Col>
                     <Col>
                       <Form.Control
                         as='select'
@@ -87,11 +93,11 @@ const ProductScreen = () => {
               <ListGroup.Item>
                 <Button
                   onClick={addToCartHandler}
-                  className='btn-block'
+                  className='btn-primary btn-block'
                   type='button'
                   disabled={product.countInStock === 0}
                 >
-                  Add To Cart
+                  Añadir al Carrito
                 </Button>
               </ListGroup.Item>
             </ListGroup>
