@@ -31,13 +31,12 @@ const __dirname = path.dirname(__filename);
 
 // Comprueba si el entorno es producción
 if (process.env.NODE_ENV === 'production') {
-  // Sirve la carpeta 'build' del cliente como archivos estáticos
-  // Sube un nivel desde /server para encontrar la raíz del proyecto
-  app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+  // Sirve la carpeta 'public' (que contiene el build del cliente) como archivos estáticos
+  app.use(express.static(path.join(__dirname, 'public')));
 
   // Para cualquier otra ruta que no sea de la API, sirve el index.html de React
   app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
   );
 } else {
   // En desarrollo, solo muestra que la API está funcionando
