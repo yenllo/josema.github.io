@@ -1,33 +1,19 @@
 import React from 'react';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Table, Button, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import products from '../products';
+import Product from '../components/Product';
 
 const ProductListScreen = () => {
   return (
     <>
-      <Row className='align-items-center'>
-        <Col>
-          <h1>Products</h1>
-        </Col>
-        <Col className='text-right'>
-          <Button className='my-3'>
-            <i className='fas fa-plus'></i> Create Product
-          </Button>
-        </Col>
+      <h1>Tienda</h1>
+      <Row>
+        {products.map((product) => (
+          <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+            <Product product={product} />
+          </Col>
+        ))}
       </Row>
-      <Table striped bordered hover responsive className='table-sm'>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>PRICE</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* We will map through products here */}
-        </tbody>
-      </Table>
     </>
   );
 };

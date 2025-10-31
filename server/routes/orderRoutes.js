@@ -1,13 +1,8 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const {
-  addOrderItems,
-  getOrderById,
-  getOrders,
-} = require('../controllers/orderController');
-const { protect, admin } = require('../middleware/authMiddleware');
+import { addOrderItems, getOrderById } from '../controllers/orderController.js';
 
-router.route('/').post(protect, addOrderItems).get(protect, admin, getOrders);
-router.route('/:id').get(protect, getOrderById);
+router.route('/').post(addOrderItems);
+router.route('/:id').get(getOrderById);
 
-module.exports = router;
+export default router;

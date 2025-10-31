@@ -4,11 +4,15 @@ import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
-import AboutScreen from './screens/AboutScreen';
-import ContactScreen from './screens/ContactScreen';
-import UserListScreen from './screens/UserListScreen';
 import ProductListScreen from './screens/ProductListScreen';
-import OrderListScreen from './screens/OrderListScreen';
+import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
+import MundoLBCScreen from './screens/MundoLBCScreen';
+import GiftCardScreen from './screens/GiftCardScreen';
 
 const App = () => {
   return (
@@ -18,11 +22,15 @@ const App = () => {
         <Container>
           <Routes>
             <Route path='/' element={<HomeScreen />} exact />
-            <Route path='/about' element={<AboutScreen />} />
-            <Route path='/contact' element={<ContactScreen />} />
-            <Route path='/admin/userlist' element={<UserListScreen />} />
-            <Route path='/admin/productlist' element={<ProductListScreen />} />
-            <Route path='/admin/orderlist' element={<OrderListScreen />} />
+            <Route path='/store' element={<ProductListScreen />} />
+            <Route path='/product/:id' element={<ProductScreen />} />
+            <Route path='/cart' element={<CartScreen />} />
+            <Route path='/shipping' element={<ShippingScreen />} />
+            <Route path='/payment' element={<PaymentScreen />} />
+            <Route path='/placeorder' element={<PlaceOrderScreen />} />
+            <Route path='/order/:id' element={<OrderScreen />} />
+            <Route path='/mundo-lbc' element={<MundoLBCScreen />} />
+            <Route path='/gift-card' element={<GiftCardScreen />} />
           </Routes>
         </Container>
       </main>
