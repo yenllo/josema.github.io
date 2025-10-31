@@ -1,3 +1,4 @@
+console.log(`[DIAGNOSTIC] Current NODE_ENV: ${process.env.NODE_ENV}`);
 import 'dotenv/config';
 import express from 'express';
 import connectDB from './config/db.js';
