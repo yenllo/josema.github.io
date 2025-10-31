@@ -2,7 +2,7 @@ const products = [
   {
     _id: '1',
     name: 'Taza Rústica Azul',
-    image: 'https://i.ibb.co/8XYP6Yf/taza-rustica-azul.jpg',
+    image: '/images/taza-rustica-azul.jpg',
     description:
       'Taza de cerámica gres hecha a mano con esmalte azul reactivo, perfecta para tu café de la mañana.',
     price: 15000,
@@ -11,7 +11,7 @@ const products = [
   {
     _id: '2',
     name: 'Cuenco de Desayuno',
-    image: 'https://i.ibb.co/tYHk1kF/cuenco-desayuno.jpg',
+    image: '/images/cuenco-desayuno.jpg',
     description:
       'Cuenco versátil ideal para cereales, sopas o ensaladas. Esmalte interior blanco con borde natural.',
     price: 18000,
@@ -20,7 +20,7 @@ const products = [
   {
     _id: '3',
     name: 'Plato de Postre Jaspeado',
-    image: 'https://i.ibb.co/5Kh3sY4/plato-jaspeado.jpg',
+    image: '/images/plato-jaspeado.jpg',
     description:
       'Plato pequeño con un diseño jaspeado único en tonos tierra. Ideal para postres o aperitivos.',
     price: 12000,
@@ -29,7 +29,7 @@ const products = [
   {
     _id: '4',
     name: 'Macetero Colgante',
-    image: 'https://i.ibb.co/pLgDqzj/macetero-colgante.jpg',
+    image: '/images/macetero-colgante.jpg',
     description:
       'Dale un toque de verde a tu hogar con este macetero de cerámica gres para colgar.',
     price: 25000,
