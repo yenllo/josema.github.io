@@ -24,27 +24,23 @@ app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 
-// --- Lógica de Producción Autodetectable ---
+// --- Lógica de Producción ---
 
 // Obtenemos la ruta del directorio actual de una forma robusta para ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const prodBuildExists = fs.existsSync(path.join(__dirname, 'public', 'index.html'));
 
-console.log(`Chequeando la existencia del build de producción: ${prodBuildExists}`);
-
 // Comprueba si el build de producción existe
 if (prodBuildExists) {
-  console.log('Build de producción detectado. Sirviendo archivos estáticos.');
   // Sirve la carpeta 'public' como archivos estáticos
   app.use(express.static(path.join(__dirname, 'public')));
 
   // Para cualquier otra ruta que no sea de la API, sirve el index.html de React
-  app.get('*', (req, res) =>
+  app.get('/*', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
   );
 } else {
-    console.log('No se encontró build de producción. Ejecutando en modo solo API.');
   // En desarrollo o si el build no existe, solo muestra que la API está funcionando
   app.get('/', (req, res) => {
     res.send('API is running...');
