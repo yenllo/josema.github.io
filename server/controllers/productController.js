@@ -1,4 +1,4 @@
-const Product = require('../models/Product');
+import Product from '../models/productModel.js';
 
 // @desc    Fetch all products
 // @route   GET /api/products
@@ -83,7 +83,7 @@ const updateProduct = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   getProducts,
   getProductById,
   deleteProduct,
